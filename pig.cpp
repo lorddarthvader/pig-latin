@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <sstream>
-#include <string.h>
+
 
 std::vector<std::string> split(std::string& rawstring) 
 {
