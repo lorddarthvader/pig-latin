@@ -2,7 +2,6 @@
 #include <vector>
 #include <sstream>
 
-
 std::vector<std::string> split(std::string& rawstring) 
 {
   std::string tmp;
@@ -40,11 +39,13 @@ std::string convert(std::string usrin)
   std::string end = "ay";
   if(upper(usrin))
     end = "AY";
+  if(tolower(usrin[0])=='y') 
+    return usrin + end;
   bool vowel = false;
   char vowels[] = {'a', 'e', 'i', 'o', 'u'};
   std::string letters[] = {"th", "ch", "sh", "ph", "wh", "qu"};
   std::string pig = "";
-  for(int i = 0; i < 5; i++)
+  for(int i = 0; i < 6; i++)
     {
       if(tolower(usrin[0])==vowels[i]) 
 	{
@@ -98,5 +99,3 @@ int main()
       std::cout << p_latin << std::endl;
     }
 }
-
-
