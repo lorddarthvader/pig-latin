@@ -34,6 +34,9 @@ std::string tupper(std::string lower)
 
 std::string convert(std::string usrin) 
 {
+  bool fcap = false;
+  if(isupper(usrin[0]))
+    fcap = true;
   std::string end = "ay";
   if(upper(usrin))
     end = "AY";
@@ -60,6 +63,8 @@ std::string convert(std::string usrin)
 	    pig += usrin[x];
 	  if(upper(usrin))
 	    newstr = tupper(newstr);
+	  if(fcap)
+	    pig[0] = toupper(pig[0]);
 	  return pig + newstr + end;
 	  break;
 	}
@@ -68,6 +73,8 @@ std::string convert(std::string usrin)
     {
       for(int i = 1; i < usrin.length(); i++)
 	pig += usrin[i];
+      if(fcap)
+	pig[0] = toupper(pig[0]);
       return pig + usrin[0] + end;
     } 
   else 
@@ -91,3 +98,5 @@ int main()
       std::cout << p_latin << std::endl;
     }
 }
+
+
